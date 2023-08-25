@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+  --color-site-1: hsl(31, 77%, 52%);
+  --color-site-2: hsl(184, 100%, 22%);
+  --color-site-3: hsl(179, 100%, 13%);
+
+  --color-brand-2: hsla(0, 0%, 100%, 0.75);
+  --color-brand-1: hsl(0, 0%, 95%);
+  --font-bigShoulders-large: "Big Shoulders Display", cursive;
+  --font-lexendDeca-small: "Lexend Deca", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+#root {
+  background-color: var(--color-brand-2);
+  padding: 2rem 0;
+}
+
+main {
+  width: 90%;
+  border-radius: 2rem;
+  overflow: hidden;
+  margin: auto;
+  font-display: optional;
+}
+
+.Card {
+  padding: 2.5rem;
+}
+
+.Card:first-of-type {
+  background-color: var(--color-site-1);
+}
+
+.Card:nth-of-type(2) {
+  background-color: var(--color-site-2);
+}
+
+.Card:last-of-type {
+  background-color: var(--color-site-3);
+}
+
+.Card-ImgContainer {
+  margin-top: 1rem;
+}
+
+.Card-ImgContainer > img {
+  width: 6.5rem;
+  height: 4.5rem;
+}
+
+.Card-Title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-family: var(--font-bigShoulders-large);
+  color: var(--color-brand-1);
+  margin: 2rem 0;
+}
+
+.Card-Para {
+  font-size: 1.6rem;
+  color: var(--color-brand-2);
+  font-family: var(--font-lexendDeca-small);
+  line-height: 2.5rem;
+  letter-spacing: 0.1rem;
+  width: 95%;
+  margin: 1rem 0;
+}
+
+.Card-Btn {
+  font-size: 1.6rem;
+  background-color: var(--color-brand-1);
+  padding: 1.5rem 3rem;
+  font-weight: 600;
+  border-radius: 2.25rem;
+  font-family: var(--font-lexendDeca-small);
+  text-transform: capitalize;
+  border: 0.1rem solid var(--color-brand-1);
+  outline: none;
+  cursor: pointer;
+  margin: 2.5rem 0 1rem;
+}
+
+.Card:first-of-type > .Card-Btn {
+  color: var(--color-site-1);
+}
+
+.Card:nth-of-type(2) > .Card-Btn {
+  color: var(--color-site-2);
+}
+
+.Card:last-of-type > .Card-Btn {
+  color: var(--color-site-3);
+}
+
+.Card-Btn:hover,
+.Card-Btn:active {
+  background-color: transparent;
+  border: 0.1rem solid var(--color-brand-1);
+  color: var(--color-brand-1) !important;
+}
+
+@media screen and (min-width: 790px) {
+  #root {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  main {
+    max-width: 75rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .Card {
+    min-height: 42rem;
+    position: relative;
+  }
+
+  .Card-Btn {
+    position: absolute;
+    bottom: 2rem;
+  }
+}
